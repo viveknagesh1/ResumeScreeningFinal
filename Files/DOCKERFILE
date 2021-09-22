@@ -1,0 +1,37 @@
+FROM python:3.7
+
+RUN apt-get update && apt-get install apt-utils wget build-essential cmake libfreetype6-dev pkg-config libfontconfig-dev libjpeg-dev libopenjp2-7-dev libcairo2-dev libtiff5-dev -y
+RUN wget https://poppler.freedesktop.org/poppler-data-0.4.10.tar.gz \
+    && tar -xf poppler-data-0.4.10.tar.gz \
+    && cd poppler-data-0.4.10 \
+    && make install \
+    && cd .. \
+    && wget https://poppler.freedesktop.org/poppler-21.03.0.tar.xz \
+    && tar -xf poppler-21.03.0.tar.xz \
+    && cd poppler-21.03.0 \
+    && mkdir build \
+    && cd build \
+    && cmake .. \
+    && make \
+    && make install \
+    && cd ../.. \
+    && ldconfig \
+    && rm poppler-data-0.4.10.tar.gz \
+    && rm -rf poppler-data-0.4.10 \
+    && rm poppler-21.03.0.tar.xz \
+    && rm -rf poppler-21.03.0
+CMD tail -f /dev/null
+
+# Allows docker to cache installed dependencies between builds
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt --use-deprecated=legacy-resolver 
+RUN pip install dnspython
+#RUN cat requirements.txt | xargs -n 1 pip3 install 
+# Mounts the application code to the image
+COPY . code
+WORKDIR /code
+
+EXPOSE 5000
+ENV FLASK_APP=exampleapp:app
+CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["python","app.py"]

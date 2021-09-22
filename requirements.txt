@@ -1,0 +1,51 @@
+textsearch==0.0.17
+inflect==2.1.0
+bcrypt==3.2.0
+docx==0.2.4
+docx2txt==0.8
+easytextract==1.1.5
+
+Flask==1.1.1
+Flask-PyMongo==2.3.0
+Flask-Session==0.4.0
+Flask-SocketIO==5.1.1
+
+gensim==3.8.0
+nltk==3.4.5
+numpy==1.20.1
+
+pandas==1.2.4
+
+pdfminer.six==20181108
+pdftotext==2.2.0
+pymongo==3.11.4
+PyPDF2==1.26.0
+python-docx==0.8.11
+python-engineio==4.2.1
+python-pptx==0.6.18
+python-socketio==5.4.0
+redis==3.5.3
+requests==2.22.0
+python-poppler
+poppler-utils
+scikit-image==0.18.1
+
+sklearn==0.0
+textract==1.6.3
+textsearch==0.0.17
+autocorrect==0.4.4
+contractions==0.0.21
+
+# textract==1.6.3
+# requests==2.22.0
+# Flask==1.1.1
+# gensim==3.8.0
+# sklearn==0.0
+# PyPDF2==1.26.0
+# autocorrect==0.4.4
+# nltk==3.4.5
+# contractions==0.0.21
+# textsearch==0.0.17
+# inflect==2.1.0
+# numpy==1.17.2
+# pdfminer.six==20181108

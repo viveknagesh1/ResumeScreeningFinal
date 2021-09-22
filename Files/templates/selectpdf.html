@@ -1,0 +1,601 @@
+<html>
+
+<head>
+    <title>INDEX</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!--Apply this font to all pages-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        body
+        {
+            background-image: url("static/bg2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .contain {
+            position: relative;
+            text-align: center;
+            width: 100%;
+            font-size: 50px;
+            height: 50%
+        }
+
+        .contain .text-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .contain .words {
+            display: inline-block;
+        }
+
+        .text-wrapper {
+            margin-top: 20vh;
+            color: #ffffff;
+            font-size: 70px;
+            text-shadow: -4px 0 #004a87, 0 4px #004a87, 4px 0 #004a87, 0 -4px #004a87;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .navbar-inner {
+            background-color: transparent;
+        }
+
+        .card {
+            color: white;
+            margin-top: auto;
+            margin-bottom: auto;
+            background-color: #004a87;
+        }
+
+        .card1 {
+            color: white;
+            height: 280px;
+            width: 430px;
+        }
+
+        .card2 {
+            color: white;
+            height: 570px;
+            width: 430px;
+        }
+
+        .card3 {
+            color: white;
+            height: 280px;
+            width: 430px;
+        }
+
+        .card4 {
+            color: white;
+            height: 280px;
+            width: 430px;
+        }
+
+        .social_icon span {
+            font-size: 60px;
+            margin-left: 10px;
+            color: #004a87;
+        }
+
+        .social_icon span:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+        .card-header h3 {
+            color: white;
+        }
+
+        .social_icon {
+            position: absolute;
+            right: 20px;
+            top: -45px;
+        }
+
+        .input-group-prepend span {
+            width: 50px;
+            background-color: #004a87;
+            color: black;
+            border: 0 !important;
+        }
+
+        input:focus {
+            outline: 0 0 0 0 !important;
+            box-shadow: 0 0 0 0 !important;
+        }
+
+        .remember {
+            color: white;
+        }
+
+        .remember input {
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+            margin-right: 5px;
+        }
+
+        .login_btn {
+            color: black;
+            background-color: #FFC312;
+            width: auto;
+        }
+        .uplaod_btn{
+            width: 280px;
+        }
+        .login_btn:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .links {
+            color: white;
+        }
+
+        .links a {
+            margin-left: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- !!! NAVBAR !!! -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-static-top sticky-top"
+        style="background-color: #004a87; opacity: 1">
+        <div class="navbar-inner">
+            <a class="navbar-brand" href="{{ url_for('home')}}" style="color :#626C66;"><img background=""
+                    src="{{url_for('static', filename='logo.png')}}" align="middle"
+                    style="width : 50%; height :auto" /></a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto">
+                {% if not session.logged_in %}
+                <li class="nav-item "><a class="nav-link" style="color:#ffffff" href="{{ url_for('signup') }}"> <i
+                            class="fa fa-sign-in"></i> Sign up</a></li>
+                <li class="nav-item"><a class="nav-link" style="color: #ffffff" href="{{ url_for('login') }}"> <i
+                            class="fa fa-user"></i> Sign in </a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" style="color: #ffffff" href="{{ url_for('selectpdf') }}"> <i
+                            class="fa fa-user"></i> Screen </a></li>
+
+                <li class="nav-item "><a class="nav-link" style="color: white" href=" {{ url_for('logout') }}"> <i
+                            class="fa fa-sign-in"></i> Logout</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <!-- 1 -->
+    <div class="container">
+
+
+        <div class="row">
+
+
+            <div class="col-md-4">
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <div class="container">
+                            <br><br>
+                            <div class="d-flex  h-100">
+                                <div class="card card1">
+                                    <div class="card-header">
+                                        <h3>Select Vertical</h3>
+                                        <div class="d-flex justify-content-end social_icon">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="{{ url_for('login') }}" method=post>
+                                            <select id="cars" name="cars" class="form-control">
+                                                <option value="volvo">Volvo</option>
+                                                <option value="saab">Saab</option>
+                                                <option value="fiat">Fiat</option>
+                                                <option value="audi">Audi</option>
+                                            </select>
+                                            <br>
+                                            {% if session['username']== "admin" %}
+                                            <div class="form-group">
+                                                <input value="Add new Vertical" class="btn float-right login_btn">
+                                            </div>
+                                            {% endif %}
+                                        </form>
+                                    </div>
+                                    <br><br>
+                                    <div id="form-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-md-11">
+                        <div class="container ">
+                            <br><br>
+                            <div class="d-flex  h-100">
+                                <div class="card card1">
+                                    <div class="card-header">
+                                        <h3>Search String</h3>
+                                        <div class="d-flex justify-content-end social_icon">
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                        // function addResDir()
+                                        // {
+                                        //     var res_dir_path = document.getElementById('directory').value
+                                        //     $("<input />").attr("type", "hidden")
+                                        //         .attr("name", "res_dir_path")
+                                        //         .attr("value", res_dir_path)
+                                        //         .appendTo("#search_str_form");
+                                        //     // return true;
+                                        // }
+                                    </script>
+
+                                    <!-- Modal -->
+                                    <div id = 'search_modal' class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 style="color: black;" class="modal-title" id="exampleModalLabel">Matching Resumes</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <div id = 'ss_modal' class="modal-body">
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <!-- "{{ url_for('search_string') }}" -->
+                                        <form id = 'search_str_form' enctype = "multipart/form-data">
+                                            <input required type="text" name="searchstring" id="searchstr_name" class="form-control"
+                                                placeholder="Enter the Search String">
+
+                                            <br>
+                                            <div class="form-group">
+                                                
+                                                <input required form = "search_str_form" class="form-control" type="file" name = "resFileMultiple" id="formFileMultipleX" multiple />
+                                                <br>
+                                                <input form = 'search_str_form'  onclick="searchstring_fn()" type="submit" id="searchstr_submit" value="Search String"
+                                                    class="btn float-right login_btn">
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <script>
+                                        $("#searchstr_submit").click(function(event){
+                                            event.preventDefault();
+                                            });
+                                        function searchstring_fn(e)
+                                        {
+                                            // addResDir()
+                                            console.log('Came to search_str fn');
+                                            var object = {};
+                                            var formData = new FormData(document.querySelector('#search_str_form'))
+                                            object['resFileMultiple'] = []
+                                            formData.forEach(function(value, key){
+                                                if(key == "resFileMultiple")
+                                                    object[key].push(value);
+                                                else
+                                                    object[key] = value;    
+                                            });
+
+                                            if(document.getElementById('formFileMultipleX').files.length == 0)
+                                            {
+                                                alert("Please select some files!");
+                                                return;
+                                            }
+                                            console.log("obj in searchstr_fn : ", formData.getAll('resFileMultiple'));
+
+                                            $.ajax
+                                            ({
+                                                url: '/search_string',
+                                                method: 'POST',
+                                                // {data : object}
+                                                data: formData,
+                                                contentType: false,
+                                                cache: false,
+                                                processData: false,
+                                                success: function(res)
+                                                {
+                                                    res = JSON.parse(res)
+                                                    console.log('\n\nSuccess!', res, '\n')
+                                                    var res_len = res.length
+
+                                                    const s_modal_node = document.getElementById("ss_modal");
+                                                    while (s_modal_node.firstChild) 
+                                                    {
+                                                        s_modal_node.removeChild(s_modal_node.lastChild);
+                                                    }
+
+                                                    for(var i = 0; i < res_len; ++i)
+                                                    {
+                                                        var list_ele = document.createElement('li')
+                                                        var a_ele=document.createElement("a")
+                                                        list_ele.innerHTML = res[i]
+                                                        list_ele.style.color = 'black'
+                                                        s_modal_node.append(list_ele)
+                                                    }
+                                                    
+                                                    var button = document.createElement('button')
+                                                    button.setAttribute('class', 'btn btn-primary')
+                                                    button.setAttribute('data-toggle', 'modal')
+                                                    button.setAttribute('data-target', '#search_modal')
+                                                    button.style.display = 'none'
+                                                    document.body.appendChild(button)
+                                                    button.click()
+                                                },
+                                                error: function(jqXHR, textStatus, errorThrown)
+                                                {
+                                                    console.log("ERROR!");
+                                                    console.log(textStatus, errorThrown);
+                                                }
+                                            })
+                                        }
+                                    </script>
+
+                                    <br><br>
+                                    <div id="form-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container">
+                            <br><br>
+                            <div class="d-flex h-100">
+                                <div class="card card3">
+                                    <div class="card-header">
+                                        <h4>Select an Existing JD</h4>
+                                        <div class="d-flex justify-content-end social_icon">
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                               
+                                            <!-- FORM TAG HAS STARTED HERE -->
+                                            
+                                            <form id = "random_form" action = "/results" method = "POST" enctype = "multipart/form-data">
+                                              <!-- <select name="des" class="form-control">
+                                         
+                                              {% for r in results :%}
+                                                <option value = '{{r.name}}'>{{r.name}}</option>
+                                              
+                                              {% endfor %}
+                                         
+                                              </select> -->
+
+                                              <!-- <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                              <button type="button" class="btn btn-dark float-center">Upload JD</button> -->
+
+                                              <label for="formFileSm" class="form-label">Supported File Format : pdf/doc/docx/txt</label>
+                                              <input required class="form-control form-control-sm" id="formFileSm" type="file" name="jd_file" />
+
+                                              <br>
+
+                                        
+                                                                    <BR></BR>
+                                                                    <p style="text-align:center;"> Kindly upload a JD file or contact the admin to upload a new JD </p>
+                                                                </div>
+                                                                <br><br>
+                                                                <div id="form-error"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-30">
+                                                                <div class="container">
+                                                                    <br><br>
+                                                                    <div class="d-flex  h-100">
+                                                                        <div class="card card4">
+                                                                            <div class="card-body">
+                                                                                    <h3 style="font-size:19px;">Selecting Resume Directory</h3><br>
+                                                                                    
+                                                                                    <!-- <select id="directory" name="directory" class="form-control">
+                                                                                        {% for r in directories :%}
+                                                                                            <option value = '{{r}}'>{{r}}</option>
+                                                                                        {% endfor %}
+                                                                                    </select><br> -->
+
+                                                                                    <!-- <input type="text" value="" name="new_jd_dict" id="new_jd_dict" class="form-control"
+                                                                                        placeholder="Enter Path to Resume Directory"> -->
+                                                                                    
+                                                                                    <label for="formFileMultiple" class="form-label">Supported File Format : pdf/doc/docx/txt</label>
+                                                                                    <input required class="form-control" type="file" name = "resFileMultiple" id="formFileMultiple" multiple />
+                                                                                    <br><br>
+
+                                                                                    <input form="random_form" required type="submit" value="Screen"
+                                                                                            class="btn float-right login_btn btn-lg btn-primary btn-lg btn-blocK"/>
+
+                                                                                    <!-- <div class="form-group">
+                                                                                        <input required type="submit" id="submit" value="Screen"
+                                                                                            class="btn float-right login_btn btn-lg btn-primary btn-lg btn-blocK">
+                                                                                    </div> -->
+                                                                                    <br><br>
+                                                                                    <div id="form-error"></div>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- 
+        3     -->
+
+        <div class="col-md-4">
+            <!-- <div class="row">
+                <div class="col-md-12">
+                    <div class="container">
+                        <br><br>
+                        <div class="d-flex  h-100">
+                            <div class="card card3">
+                                <br>
+                                <P style="text-align:center;">ADMIN SECTION </P>
+                                <div class="card-header">
+                                    <h3>Upload JD Here</h3>
+                                    <div class="d-flex justify-content-end social_icon">
+                                    </div>
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="form-group">
+                                       
+                                        {% if session['username']== "admin" %}
+                                        <input  class="btn float-right login_btn uplaod_btn" id="input-b3" name="input-b3[]" type="file" class="file " multiple 
+                                          data-show-upload="false" data-show-caption="true" data-msg-placeholder="Select JD for upload"> 
+                                          <br><br><br>
+                                        <input type="submit" id="submit" value="Upload"
+                                          class="btn float-right login_btn">
+                                          <input type="button" id="manage" value="JD Management"
+                                          class="btn float-left login_btn">
+                                         {%endif%} 
+                                         {% if session['username']!= "admin" %}
+                                            <br>
+                                            
+
+                                            <P style="text-align:center;">This section is only accessible with admin previlages</P>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                            
+                                <br><br>
+                                <div id="form-error"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container">
+                        <br><br>
+                        <div class="d-flex  h-100">
+                            <div class="card card4">
+                                <br>
+                                <P style="text-align:center;">ADMIN SECTION </P>
+                                <div class="card-body">
+                                    <h3 style="font-size:19px;">Manually Enter JD</h3><br>
+                                 
+                                    <br>
+                                    <div class="form-group">
+                                        {% if session['username']== "admin" %}
+
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#manual_jd_modal" data-whatever="@mdo">Enter JD</button>
+
+                                        {%endif%}
+                                        {% if session['username']!= "admin" %}
+                                            <P style="text-align:center;">This section is only accessible with admin previlages</P>
+                                        {% endif %}
+                                        
+                                    </div>
+
+                                    <div class="modal fade" id="manual_jd_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h5 style = "color:black;" class="modal-title" id="exampleModalLabel">Enter JD Manually</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+
+                                            <script>
+                                                // // a script to attach selected resume files before submitting manually enter jd form
+                                                // function beforeSubmit() 
+                                                // {
+                                                //     // var res_dir_path = document.querySelector('#directory').value
+                                                //     $('<input />').attr('type', 'hidden')
+                                                //         .attr('name', 'all_res')
+                                                //         .attr('value', clone.files)
+                                                //         // .attr('type', 'file')
+                                                //         .appendTo('#jd_form');
+                                                //     return true;
+                                                // }
+                                            </script>
+
+                                            <div class="modal-body">
+                                                <!-- onsubmit='beforeSubmit()' -->
+                                              <form method = "POST" id = "jd_form" action = '/results_manually' enctype = "multipart/form-data">
+                                                <div class="form-group">
+                                                  <label style = "color:black;" for="recipient-name" class="col-form-label">Role</label>
+                                                  <input required type="text" class="form-control" id="role" name = "role">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style = "color:black;" for="recipient-name" class="col-form-label">Years of Experience</label>
+                                                    <input required type="text" class="form-control" id="yoe" name = "yoe">
+                                                  </div>
+                                                <div class="form-group">
+                                                  <label style = "color:black;" for="message-text" class="col-form-label">Must Have Skills</label>
+                                                  <textarea required class="form-control" id="mh_skills" name = "mh_skills"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style = "color:black;" for="message-text" class="col-form-label">Good to Have Skills</label>
+                                                    <textarea required class="form-control" id="gh_skills" name="gh_skills"></textarea>
+                                                </div>
+
+                                                <label style = "color:black;">Upload Resume Files (pdf/doc/docx/txt)</label>
+                                                <input required class="form-control" type="file" name = "resFileMultiple" id="formFileMultiple1" multiple />
+
+                                              </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                              <button form = "jd_form" type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                    <br><br>
+                                    <div id="form-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    <div>
+</body>
+
+</html>

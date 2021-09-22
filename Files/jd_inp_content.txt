@@ -1,0 +1,20 @@
+Java Developer needed. Optimal if has 5-10 years of experience in the IT department.
+Years of experience: 8-12 yrs
+
+Must to have:
+Designing and implementing Java-based web applications.
+Must have 4+ year of experience in java development.
+Must worked on java, spring boot, mongo db, oauth tokens, junits, SQL, git
+Should have exposure on continuous integration and development environments like vsts , azure dev ops.
+Should have worked on agile development.
+Experience on desktop applications development and installers are added advantage.
+
+job RolE: Java Dev.
+
+Good to have:
+Intermediate to expert knowledge in HTML, CSS, Java script, Angular, NodeJS or ReactJS.
+Experience in the Spring Boot Framework, REST services, Cloud based projects preferably Azure
+Knowledge on CI/CD process
+Experience in developing web applications using at least one popular web framework (e.g Spring MVC)
+Experience with test-driven development
+Strong knowledge in Java Design Patterns.

@@ -1,0 +1,25 @@
+job role: Java Full Stack Developer
+
+
+Java full stack dev needed urgently. A candidate who can develop both client and server software”. 
+If a developer works on full-stack, it implies that he/she is performing all the tasks regarding Front-end, Back-end, the database, and finally the integration process. 
+As a full-stack developer, you need to care about coding the server-side API, programming languages for back end development, executing the client-side of the application using JavaScript, querying databases, and version control systems as well.
+Must to have:
+4 to 6 years of experience in web/desktop application development
+• Strong experience in JAVA and J2EE technologies, Profound insight of Core Java (Collection, String Handling Exception handling etc) and JEE internals (Class loading, Memory Management, Transaction management etc)
+• Excellent knowledge of Relational Databases, SQL and ORM technologies (JPA2, Hibernate)
+• Intermediate to expert knowledge in HTML, CSS, Java script, Angular, NodeJS or ReactJS.
+• Experience in the Spring Boot Framework, REST services, Cloud based projects preferably Azure
+• Knowledge on CI/CD process
+
+Good to have:
+• Experience in developing web applications using at least one popular web framework (e.g Spring MVC)
+• Experience with test-driven development
+• Strong knowledge in Java Design Patterns.
+• Experience developing applications with Agile team methodologies preferred.
+• Sufficient experience with Git to organize a large software project with multiple developers to include branching, tagging and merging.
+
+Years Of Experience: 5-10 years
+
+
+A full-stack developer adds value to the organization and team, owing to developing a varied skill-set and the ability to work on a project independently, thereby reducing the operational costs.
